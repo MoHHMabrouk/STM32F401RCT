@@ -828,7 +828,7 @@ LOAD /opt/st/stm32cubeide_1.15.1/plugins/com.st.stm32cube.ide.mcu.externaltools.
  .debug_aranges
                 0x000000a0       0x28 ./Startup/startup_stm32f401rctx.o
 
-.debug_macro    0x00000000      0xc95
+.debug_macro    0x00000000      0xc9f
  .debug_macro   0x00000000       0x1b ./Configs/GPIO_Conf.o
  .debug_macro   0x0000001b      0xaba ./Configs/GPIO_Conf.o
  .debug_macro   0x00000ad5       0x4b ./MCAL/GPIO/GPIO_Prog.o
@@ -836,25 +836,25 @@ LOAD /opt/st/stm32cubeide_1.15.1/plugins/com.st.stm32cube.ide.mcu.externaltools.
  .debug_macro   0x00000be4       0x22 ./MCAL/GPIO/GPIO_Prog.o
  .debug_macro   0x00000c06       0x40 ./MCAL/RCC/RCC_Prog.o
  .debug_macro   0x00000c46       0x16 ./MCAL/RCC/RCC_Prog.o
- .debug_macro   0x00000c5c       0x39 ./Src/main.o
+ .debug_macro   0x00000c5c       0x43 ./Src/main.o
 
-.debug_line     0x00000000      0x630
+.debug_line     0x00000000      0x673
  .debug_line    0x00000000       0x46 ./Configs/GPIO_Conf.o
  .debug_line    0x00000046      0x2ed ./MCAL/GPIO/GPIO_Prog.o
  .debug_line    0x00000333      0x141 ./MCAL/RCC/RCC_Prog.o
- .debug_line    0x00000474      0x141 ./Src/main.o
- .debug_line    0x000005b5       0x7b ./Startup/startup_stm32f401rctx.o
+ .debug_line    0x00000474      0x184 ./Src/main.o
+ .debug_line    0x000005f8       0x7b ./Startup/startup_stm32f401rctx.o
 
-.debug_str      0x00000000     0x3a65
+.debug_str      0x00000000     0x3a79
  .debug_str     0x00000000     0x3037 ./Configs/GPIO_Conf.o
                                0x3065 (size before relaxing)
  .debug_str     0x00003037      0x566 ./MCAL/GPIO/GPIO_Prog.o
                                0x35db (size before relaxing)
  .debug_str     0x0000359d      0x476 ./MCAL/RCC/RCC_Prog.o
                                0x3625 (size before relaxing)
- .debug_str     0x00003a13       0x13 ./Src/main.o
-                               0x318a (size before relaxing)
- .debug_str     0x00003a26       0x3f ./Startup/startup_stm32f401rctx.o
+ .debug_str     0x00003a13       0x27 ./Src/main.o
+                               0x319e (size before relaxing)
+ .debug_str     0x00003a3a       0x3f ./Startup/startup_stm32f401rctx.o
                                  0x6a (size before relaxing)
 
 .comment        0x00000000       0x43

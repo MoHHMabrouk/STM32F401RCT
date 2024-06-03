@@ -33,19 +33,19 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  14 .debug_aranges 000000c8  00000000  00000000  00002928  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_macro  00000c95  00000000  00000000  000029f0  2**0
+ 15 .debug_macro  00000c9f  00000000  00000000  000029f0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_line   00000630  00000000  00000000  00003685  2**0
+ 16 .debug_line   00000673  00000000  00000000  0000368f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_str    00003a65  00000000  00000000  00003cb5  2**0
+ 17 .debug_str    00003a79  00000000  00000000  00003d02  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .comment      00000043  00000000  00000000  0000771a  2**0
+ 18 .comment      00000043  00000000  00000000  0000777b  2**0
                   CONTENTS, READONLY
- 19 .debug_rnglists 00000075  00000000  00000000  0000775d  2**0
+ 19 .debug_rnglists 00000075  00000000  00000000  000077be  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_frame  00000184  00000000  00000000  000077d4  2**2
+ 20 .debug_frame  00000184  00000000  00000000  00007834  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 0000004e  00000000  00000000  00007958  2**0
+ 21 .debug_line_str 0000004e  00000000  00000000  000079b8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -655,6 +655,7 @@ ERROR_t RCC_enPrephiralEnClk(PeripheralBusId_t copy_enPeripheralBusId)
 08000580 <main>:
 #include "RCC_Interface.h"
 #include "GPIO_Interface.h"
+#include "NVIC_Interface.h"
 
 int main(void) {
  8000580:	b580      	push	{r7, lr}
