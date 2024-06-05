@@ -85,8 +85,6 @@ typedef struct {
 #define GPIOB_u32BASE_ADDRESS 0x40020400
 #define GPIOC_u32BASE_ADDRESS 0x40020800
 
-
-
 typedef struct {
 	uint32_t GPIO_MODER;
 	uint32_t GPIO_OTYPER;
@@ -103,5 +101,44 @@ typedef struct {
 #define GPIOA ((volatile GPIO_REG_t*)GPIOA_u32BASE_ADDRESS)
 #define GPIOB ((volatile GPIO_REG_t*)GPIOB_u32BASE_ADDRESS)
 #define GPIOC ((volatile GPIO_REG_t*)GPIOC_u32BASE_ADDRESS)
+
+/***************** NVIC *****************/
+
+#define NVIC_u32BASE_ADDRESS 0xE000E100
+#define NVIC_SIZE 32
+#define NVIC_IPR_SIZE 240
+
+typedef struct {
+	uint32_t NVIC_ISER[NVIC_SIZE];
+	uint32_t NVIC_ICER[NVIC_SIZE];
+	uint32_t NVIC_ISPR[NVIC_SIZE];
+	uint32_t NVIC_ICPR[NVIC_SIZE];
+	uint32_t NVIC_IABR[NVIC_SIZE];
+	uint32_t RESERVED[32];
+	uint8_t NVIC_IPR[NVIC_IPR_SIZE];
+
+} NVIC_REG_t;
+
+#define NVIC ((volatile NVIC_REG_t*) NVIC_u32BASE_ADDRESS)
+
+/***************** SCB *****************/
+#define SCB_u32BASE_ADDRESS 0xE000ED00
+
+typedef struct {
+	uint32_t SCB_CPUID;
+	uint32_t SCB_ICSR;
+	uint32_t SCB_VTOR;
+	uint32_t SCB_AIRCR;
+	uint32_t SCB_SCR;
+	uint8_t  SCB_SHPR[16];
+	uint32_t SCB_SHCSR;
+	uint32_t SCB_CFSR;
+	uint32_t SCB_HFSR;
+	uint32_t SCB_MMAR;
+	uint32_t SCB_BFAR;
+	uint32_t SCB_AFSR;
+} SCB_REG_t;
+
+#define SCB ((volatile SCB_REG_t*) SCB_u32BASE_ADDRESS)
 
 #endif /* MEM_MAP_H_ */

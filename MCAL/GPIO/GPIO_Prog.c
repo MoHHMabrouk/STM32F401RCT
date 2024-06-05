@@ -21,10 +21,7 @@ ERROR_t GPIO_enPinConfig(GPIO_PINS_t copy_enPinNum,
 		GPIO_PIN_MODE_t copy_enPinMode) {
 	GPIO_Port_t local_enPort = copy_enPinNum / 16;
 	GPIO_PINS_t local_enPin = copy_enPinNum % 16;
-	/*uint32_t MODER = (((uint32_t) copy_enPinMode.MODER) & (uint32_t) 0b11);
-	 uint32_t OTYPER = (((uint32_t) copy_enPinMode.OTYPER) & (uint32_t) 0b1);
-	 uint32_t PUPDR = (((uint32_t) copy_enPinMode.PUPDR) & (uint32_t) 0b11);*/
-	//uint8_t IDR = ((copy_enPinMode) & 0x00000011);
+
 	ERROR_t local_enError = OK;
 
 	switch (local_enPort) {
@@ -118,5 +115,29 @@ ERROR_t GPIO_enPinSetSpeed(GPIO_PINS_t copy_enPinNum, GPIO_SPEED_t copy_enSpeed)
 
 	}
 
+	return local_enError;
+}
+
+ERROR_t GPIO_enPinRead(GPIO_PINS_t copy_enPinNum, GPIO_PIN_OUT_t *pPinInput) {
+	GPIO_Port_t local_enPort = copy_enPinNum / 16;
+	GPIO_PINS_t local_enPin = copy_enPinNum % 16;
+	ERROR_t local_enError = OK;
+
+	switch (local_enPort) {
+	case PORTA:
+		*pPinInput = READ_BIT(GPIOA->GPIO_IDR, local_enPin);
+		break;
+
+	case PORTB:
+		*pPinInput = READ_BIT(GPIOB->GPIO_IDR, local_enPin);
+		break;
+
+	case PORTC:
+		*pPinInput = READ_BIT(GPIOC->GPIO_IDR, local_enPin);
+		break;
+
+	default:
+		break;
+	}
 	return local_enError;
 }

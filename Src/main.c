@@ -6,10 +6,17 @@ int main(void) {
 	RCC_voidSysClkEn();
 	RCC_enPrephiralEnClk(AHB1_GPIOAEN);
 	GPIO_voidInit();
-	//GPIO_enPinSetSpeed(PINA12, GPIO_LOW_SPEED);
-	GPIO_enPinSet(PINA12, HIGH);
+
+	GPIO_PIN_OUT_t PINA0_READ;
+
 	while (1) {
-		GPIO_enPinSet(PINA12, HIGH);
+		GPIO_enPinRead(PINA0, &PINA0_READ);
+		if (PINA0_READ == LOW) {
+			GPIO_enPinSet(PINA5, HIGH);
+		} else {
+			GPIO_enPinSet(PINA5, LOW);
+		}
+
 	}
 
 }
